@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntityFramework
-{
+{// Burada entitiyframework kodlarımızı yazacağız.
     public class EfProductDal : IProductDal
     {
         public void Add(Product entity)
