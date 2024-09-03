@@ -1,7 +1,8 @@
-﻿using Entities.Abstract;
+﻿using CORE.Entities;
+
 using System.Linq.Expressions;
 
-namespace DataAccess.Abstract
+namespace CORE.DataAccess
 {
     //generic constrait
     //class : referans tip
@@ -10,7 +11,7 @@ namespace DataAccess.Abstract
     {
         List<T> GetAll(Expression<Func<T,bool>> filter=null);// Ürünleri filtrelememizi sağlıyor bu kod. 
         T Get(Expression<Func<T, bool>> filter);
-        void Add(T entity);
+        void Add(T entity); 
         void Update(T entity);
         void Delete(T entity);
      

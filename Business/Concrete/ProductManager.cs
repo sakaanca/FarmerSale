@@ -50,6 +50,6 @@ namespace Business.Concrete
 
             // Eğer iş kuralları geçerse, ürünü veritabanına ekle
             _productDal.Add(product);
-        }
+        } 
     }
 }
