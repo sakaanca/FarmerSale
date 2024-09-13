@@ -14,6 +14,6 @@ namespace Entities.Concrete
         public int FarmerId { get; set; }
         public Farmer Farmer { get; set; } // Siparişin çiftçisi
         public List<Product> Products { get; set; } // Siparişe ait ürünler
-        
+        public DateTime OrderDate { get; set; }
     }
 }
