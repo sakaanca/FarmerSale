@@ -40,5 +40,45 @@ namespace DataAccess.Concrete.EntityFramework
                 return result.ToList();
             }
         }
+        public void AddProduct(Product product)
+        {
+            using (var context = new FarmerContext())
+            {
+                context.Products.Add(product);  // Yeni ürünü ekle
+                context.SaveChanges();  // Değişiklikleri veritabanına kaydet
+            }
+        }
+        public List<Product> GetAllProducts()
+        {
+            using (var context = new FarmerContext())
+            {
+                return context.Products.ToList();  // Tüm ürünleri getir
+            }
+        }
+        public Product GetProductById(int productId)
+        {
+            using (var context = new FarmerContext())
+            {
+                return context.Products.FirstOrDefault(p => p.ProductId == productId);  // Id'ye göre ürünü getir
+            }
+        }
+
+        public void UpdateProduct(Product product)
+        {
+            using (var context = new FarmerContext())
+            {
+                context.Products.Update(product);  // Ürünü güncelle
+                context.SaveChanges();  // Değişiklikleri veritabanına kaydet
+            }
+        }
+        public void DeleteProduct(Product product)
+        {
+            using (var context = new FarmerContext())
+            {
+                context.Products.Remove(product);  // Ürünü sil
+                context.SaveChanges();  // Değişiklikleri veritabanına kaydet
+            }
+        }
+
     }
 }
